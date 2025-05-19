@@ -15,6 +15,14 @@ const socialIconsMap = {
   li: FaLinkedinIn,
 };
 
+const socialIconColors = {
+  ig: "#E4405F",      // Instagram pink/red
+  fb: "#1877F2",      // Facebook blue
+  yt: "#FF0000",      // YouTube red
+  tw: "#1DA1F2",      // Twitter blue
+  li: "#0A66C2",      // LinkedIn blue
+};
+
 const plans = [
   {
     title: "Basic",
@@ -130,7 +138,7 @@ const PricingPlans = () => {
         {plans.map((plan, idx) => (
           <div
             key={idx}
-            className={`relative rounded-xl p-6 shadow-md border border-1px bg-white ${
+            className={`relative rounded-xl p-6 shadow-md bg-white ${
               plan.mostPopular
                 ? "border-2 border-transparent bg-clip-padding"
                 : "border border-gray-200"
@@ -147,56 +155,76 @@ const PricingPlans = () => {
                 Most Popular
               </span>
             )}
-            <h3 className="text-xl font-semibold mb-1">{plan.title}</h3>
-            <p className="text-2xl font-bold">
-              {plan.price === "Custom"
-                ? "Custom"
-                : billingCycle === "Annually"
-                ? Math.round(parseInt(plan.price.replace("$", "")) * 0.75) + "$"
-                : plan.price}
-              {plan.price !== "Custom" && (
-                <span className="text-base font-medium">
-                  /{billingCycle === "Annually" ? "Year" : "Month"}
-                </span>
-              )}
-            </p>
+            <h1 className="text-4xl font-bold mb-2 text-left bg-gradient-to-r from-[#413FC2] to-[#C668FD] bg-clip-text text-transparent">
+              {plan.title}
+            </h1>
+            <div className="text-left mb-4">
+              <p className="text-2xl font-bold flex items-center gap-1">
+                {plan.price === "Custom"
+                  ? "Custom"
+                  : billingCycle === "Annually"
+                  ? Math.round(parseInt(plan.price.replace("$", "")) * 0.75) + "$"
+                  : plan.price}
+                {plan.price !== "Custom" && (
+                  <span className="text-base font-medium text-gray-500">
+                    /{billingCycle === "Annually" ? "Year" : "Month"}
+                  </span>
+                )}
+              </p>
+              <hr className="mt-3 border-t border-gray-200" />
+            </div>
 
-            {/* Credits Toggle */}
-            <div className="flex mt-4 gap-2 justify-center bg-[#EAEAFF] p-1 rounded-lg">
+            <div className="inline-flex rounded-md overflow-hidden border border-[#D3C5FF] p-1 mt-4 bg-[#F4F0FF]">
               {plan.credits.map((credit, i) => (
-                <span
+                <button
                   key={i}
-                  className={`px-3 py-1 text-sm border rounded-lg ${
+                  className={`px-4 py-1 text-sm font-medium rounded-md transition-all duration-300 ${
                     i === 0
-                      ? "bg-[#6B4EFF] text-white border-transparent"
-                      : "text-[#6B4EFF]"
+                      ? "bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white shadow"
+                      : "text-[#6B4EFF] hover:bg-white"
                   }`}
                 >
                   {credit}
-                </span>
+                </button>
               ))}
             </div>
 
-            <p className="text-sm text-gray-600 mt-4 mb-2">Credits per month</p>
-            <p className="text-sm font-medium mb-4">{plan.monthlyCredits}</p>
+            <p className="text-sm font-semibold text-gray-700 mt-4 mb-1 text-left">
+              Credits per month
+            </p>
+            <p className="text-sm font-medium mb-4 text-left">
+              ✔️{plan.monthlyCredits}
+            </p>
 
             {/* Features */}
+            <p className="text-sm font-semibold text-gray-700 mt-6 mb-1 text-left">
+              Core Features
+            </p>
             <ul className="text-sm text-left space-y-2 mb-6">
               {plan.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-[#6B4EFF] text-lg">✔️</span>{" "}
-                  {feature === "Social Media" ? (
-                    <span className="flex items-center gap-1">
-                      Social Media{" "}
+                <li key={index} className="flex flex-col items-start gap-1">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#6B4EFF] text-lg">✔️</span>
+                    {feature === "Social Media" ? (
+                      <span className="text-left">Social Media</span>
+                    ) : (
+                      feature
+                    )}
+                  </div>
+                  {feature === "Social Media" && (
+                    <div className="flex items-center gap-2 pl-6">
                       {plan.socialIcons.map((icon) => {
                         const IconComponent = socialIconsMap[icon];
+                        const iconColor = socialIconColors[icon] || "#6B4EFF";
                         return IconComponent ? (
-                          <IconComponent key={icon} className="text-lg" />
+                          <IconComponent
+                            key={icon}
+                            style={{ color: iconColor, transition: "transform 0.2s" }}
+                            className="text-lg cursor-pointer hover:scale-110"
+                          />
                         ) : null;
                       })}
-                    </span>
-                  ) : (
-                    feature
+                    </div>
                   )}
                 </li>
               ))}
@@ -210,7 +238,7 @@ const PricingPlans = () => {
       </div>
 
       <div className="mt-6">
-        <button className="text-[#6B4EFF] font-medium rounded-full underline px-6 py-2">
+        <button className="text-[#6B4EFF] font-medium rounded-full border border-[#6B4EFF] px-6 py-2 mt-4 hover:bg-[#f2f0ff] transition">
           Compare all Plans
         </button>
       </div>
