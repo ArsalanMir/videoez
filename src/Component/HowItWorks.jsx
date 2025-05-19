@@ -34,34 +34,27 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-20">
+    <div className="bg-white py-14 px-4 sm:px-6 lg:px-20">
       {/* Headings */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">How it works?</h1>
-        <p className="mt-2 text-lg text-gray-600">
+      <div className="text-center mb-10">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">How it works?</h1>
+        <p className="mt-3 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Create impactful videos in 4 simple steps — from idea to shareable content using AI.
         </p>
       </div>
 
       {/* Video Categories */}
       <div className="flex flex-wrap justify-center gap-3 mb-12">
-        {categories.map((item, index) => (
+        {categories.map((item) => (
           <span
             key={item}
-            className={`px-4 py-2 rounded-full text-sm font-medium border ${
-              index === 0
-                ? "bg-black text-white"
-                : ""
-            }`}
-            style={
-              index !== 0
-                ? {
-                    background: "linear-gradient(84.88deg, rgba(65, 63, 194, 0.1) 18.63%, rgba(198, 104, 253, 0.1) 81.37%)",
-                    color: "#333",
-                    borderColor: "#ccc",
-                  }
-                : {}
-            }
+            className="px-5 py-2 rounded-full text-sm font-medium border"
+            style={{
+              background:
+                "linear-gradient(84.88deg, rgba(65, 63, 194, 0.08) 18.63%, rgba(198, 104, 253, 0.08) 81.37%)",
+              color: "#333",
+              borderColor: "#ccc",
+            }}
           >
             {item}
           </span>
@@ -69,19 +62,13 @@ const HowItWorks = () => {
       </div>
 
       {/* Main Content: Image + Steps */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         {/* Left Side Image */}
         <div className="flex justify-center">
           <img
             src={screenshot}
             alt="How it works illustration"
-            style={{
-              width: "702px",
-              height: "483px",
-              borderRadius: "20px",
-              objectFit: "cover",
-            }}
-            className="shadow-lg"
+            className="rounded-2xl shadow-lg w-full max-w-[600px] h-auto object-cover"
           />
         </div>
 
@@ -94,7 +81,7 @@ const HowItWorks = () => {
                 {/* Step Number and Line */}
                 <div className="flex flex-col items-center">
                   <div
-                    className={`h-10 w-10 rounded-full flex items-center justify-center font-bold ${
+                    className={`h-10 w-10 rounded-full flex items-center justify-center font-semibold text-base ${
                       isHighlighted
                         ? "text-white"
                         : "bg-purple-100 text-purple-700"

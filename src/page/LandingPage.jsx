@@ -14,7 +14,7 @@ const LandingPage = () => {
   return (
     <div className="flex flex-col overflow-x-hidden">
       <Navbar />
-      <main className="flex flex-col space-y-20 md:space-y-15">
+      <main className="flex flex-col">
         <Hero />
         <Action />
         <FeaturesSection />

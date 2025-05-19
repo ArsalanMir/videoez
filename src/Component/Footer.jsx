@@ -11,21 +11,21 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#f9f9f9] text-gray-700 pt-24 pb-6">
+    <footer className="relative bg-[#f9f9f9] text-gray-700 pt-32 mt-12 pb-6">
       {/* Call to Action Box Overlapping Footer */}
-      <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-[90%] md:w-4/5 bg-gradient-to-br from-[#4e00c2] to-[#f255e6] text-white rounded shadow-lg p-8 z-10">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <h2 className="text-xl md:text-2xl font-semibold max-w-2xl">
+      <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] bg-gradient-to-br from-[#4e00c2] to-[#f255e6] text-white rounded-2xl shadow-lg py-14 px-10 z-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold max-w-3xl leading-snug">
             Experience Amazing Features of our AI video Creation Platform
           </h2>
-          <button className="bg-white text-[#7B27FF] font-medium px-6 py-2 rounded-full shadow-md hover:bg-gray-100 transition">
+          <button className="bg-white text-[#7B27FF] font-medium px-8 py-3 text-base md:text-lg rounded-full shadow-md hover:bg-gray-100 transition">
             Get Started
           </button>
         </div>
       </div>
 
       {/* Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 mt-10">
+      <div className="max-w-6xl mx-auto px-6 mt-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Logo & About */}
           <div className="col-span-2">

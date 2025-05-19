@@ -8,22 +8,22 @@ import playingVr from "../assets/playingVr.jpg";
 
 const Action = () => {
   return (
-    <section className="pt-20 px-4 bg-white"> {/* Kept top padding, removed bottom padding */}
+    <section className="pt-8 px-4 bg-white"> 
       <div className="max-w-7xl mx-auto">
-        {/* Centered Heading - kept original spacing */}
-        <div className="text-center">
+        {/* Centered Heading with reduced spacing */}
+        <div className="text-center mb-4"> 
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             See our <span className="text-purple-500">AI in action</span>
           </h2>
-          <p className="mt-2 text-gray-600 text-lg">
+          <p className="mt-1 text-gray-600 text-lg"> {/* Reduced mt-2 to mt-1 */}
             Create stunning videos within no time
           </p>
         </div>
 
-        {/* Images Container - adjusted height to exact content needs */}
-        <div className="relative mt-12" style={{ 
-          height: '562px', // 330px (top image) + 37px gap + 175px (bottom row) + 20px buffer
-          marginBottom: '0' // Remove any bottom margin
+        {/* Images Container - tight spacing */}
+        <div className="relative" style={{ 
+          height: '562px',
+          marginBottom: '0'
         }}>
           {/* Left Column Images */}
           <div className="absolute left-0">
@@ -50,7 +50,7 @@ const Action = () => {
               borderRadius: '15px',
               overflow: 'hidden',
               position: 'absolute',
-              top: '367px' // 330px + 37px
+              top: '367px'
             }}>
               <img
                 src={girlImage}
@@ -67,7 +67,7 @@ const Action = () => {
               overflow: 'hidden',
               position: 'absolute',
               top: '367px',
-              left: '263px' // 233px + 30px
+              left: '263px'
             }}>
               <img
                 src={MenImg}
@@ -78,7 +78,7 @@ const Action = () => {
           </div>
 
           {/* Right Column Images */}
-          <div className="absolute left-0 ml-[616px]"> {/* 584px + 32px */}
+          <div className="absolute left-0 ml-[616px]">
             {/* VR Image */}
             <div style={{
               width: '358px',
@@ -102,7 +102,7 @@ const Action = () => {
               borderRadius: '15px',
               overflow: 'hidden',
               position: 'absolute',
-              top: '302px' // 269px + 33px
+              top: '302px'
             }}>
               <img
                 src={Robot}
@@ -112,8 +112,8 @@ const Action = () => {
             </div>
           </div>
 
-          {/* Far Right Image (Playing VR) */}
-          <div className="absolute left-2 ml-[974px]"> {/* 584 + 358 + 32px */}
+          {/* Far Right Image */}
+          <div className="absolute left-4 ml-[974px]">
             <div style={{
               width: '308px',
               height: '546px',
