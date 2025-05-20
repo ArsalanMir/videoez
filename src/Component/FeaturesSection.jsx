@@ -17,77 +17,80 @@ const FeatureCard = ({
   gradient,
 }) => (
   <div
-    className={`w-full max-w-7xl mx-auto ${
+    className={`w-full mx-auto ${
       gradient
         ? "bg-gradient-to-br from-[#f1eaff] to-[#fdfaff]"
         : "bg-gradient-to-br from-[#f4f4fd] to-[#fefefe]"
-    } rounded-2xl px-6 md:px-8 py-10 flex flex-col ${
-      reverse ? "md:flex-row-reverse" : "md:flex-row"
-    } gap-6 items-center shadow-md border border-[#e0d4fc]`}
+    } rounded-xl p-4 shadow-sm border border-[#e0d4fc]`}
   >
-    {/* Tags */}
+    {/* Tags - matching Card1 size */}
     {tags && (
-      <div className="absolute top-6 left-6 right-6 flex flex-wrap justify-center md:justify-start gap-2 z-10">
+      <div className="flex flex-wrap gap-2 justify-center mb-4">
         {tags.map((tag, index) => (
-          <span
+          <button
             key={index}
-            className="bg-white text-purple-700 text-xs font-medium px-3 py-1 rounded-full shadow-sm border border-purple-100"
+            className="bg-gradient-to-r from-[#dfc9fd] to-[#f5c9f6] text-gray-800 font-medium px-3 py-1.5 rounded-lg text-sm hover:shadow transition whitespace-nowrap"
           >
             {tag}
-          </span>
+          </button>
         ))}
       </div>
     )}
 
-    {/* Image */}
-    <img
-      src={image}
-      alt={title}
-      className={`rounded-xl w-full md:w-1/2 h-[260px] object-cover ${
-        tags ? "mt-20 md:mt-0" : ""
-      }`}
-    />
+    <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-4 items-center`}>
+      {/* Image container - matching Card1 */}
+      <div className="w-full md:w-[40%] aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-2">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-contain"
+        />
+      </div>
 
-    {/* Content */}
-    <div className="md:w-1/2">
-      <h3 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
-        {title}
-      </h3>
-      {subtitle && (
-        <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-          {subtitle}
-        </p>
-      )}
-      <ul className="space-y-3 text-sm md:text-base text-gray-800">
-        {features.map((item, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <Star
-              className="w-5 h-5 text-purple-500 mt-1"
-              fill="currentColor"
-            />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="flex flex-wrap gap-4 mt-6">
-        <a
-          href="#"
-          className="inline-flex items-center justify-between gap-3 px-6 py-2 text-sm font-medium text-white rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all"
-        >
-          {cta}
-          <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-base">
-            ➔
-          </span>
-        </a>
-        {extraLinks?.map((link, i) => (
-          <a
-            key={i}
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-2 text-sm font-medium text-purple-700 border border-purple-300 rounded-full hover:bg-purple-50 transition"
-          >
-            {link}
-          </a>
-        ))}
+      {/* Content with larger text */}
+      <div className="w-full md:w-[60%]">
+        {/* Larger heading */}
+        <h3 className="text-xl md:text-2xl font-bold mb-3 leading-snug">
+          {title}
+        </h3>
+        
+        {/* Larger subtitle */}
+        {subtitle && (
+          <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
+            {subtitle}
+          </p>
+        )}
+        
+        {/* Larger feature list */}
+        <ul className="space-y-2 text-sm md:text-base text-gray-700">
+          {features.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-2">
+              <Star
+                className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Buttons - matching Card1 size */}
+        <div className="flex flex-wrap gap-3 mt-4">
+          <button className="text-white px-5 py-2 rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all flex items-center gap-2 text-sm font-medium">
+            {cta}
+            <span className="w-5 h-5 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-sm">
+              ➔
+            </span>
+          </button>
+          {extraLinks?.map((link, i) => (
+            <button
+              key={i}
+              className="text-purple-700 px-5 py-2 rounded-full border border-purple-300 hover:bg-purple-50 transition-all flex items-center gap-2 text-sm font-medium"
+            >
+              {link}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   </div>
@@ -95,49 +98,50 @@ const FeatureCard = ({
 
 const FeatureSection = () => {
   return (
-    <section className="bg-white pt-0 pb-8 px-4">
+    <section className="bg-white pt-0 pb-8 px-2 md:px-4">
       <Card1 />
 
-      <div className="space-y-10 mt-8">
-        {" "}
-        {/* Controls spacing between cards */}
+      <div className="space-y-6 mt-6">
         <FeatureCard
           image={adGenerator}
-          title="Video Ad maker"
-          subtitle="Generate video from any Ecommerce store URL"
+          title="Video Ad Maker"
+          subtitle="Generate professional videos directly from your eCommerce store URL"
           features={[
-            "Auto-fetch product details from store URLs (images, descriptions, prices)",
-            "AI-generated ad scripts tailored to your product type",
-            "Pre-built eCommerce ad templates optimized for conversions",
-            "Smart branding with logo, colors, and product-specific transitions",
+            "Automatically fetches product details, images and descriptions",
+            "AI-powered ad scripts optimized for conversions",
+            "Pre-designed templates for different product categories",
+            "Custom branding with your logo and color scheme"
           ]}
-          cta="Try Smart Editing →"
+          cta="Try Smart Editing"
           reverse
         />
+        
         <FeatureCard
           image={aiAvatar}
-          title="Create stunning videos with AI avatars and voiceovers"
+          title="AI Avatar Videos"
+          subtitle="Create engaging videos with realistic digital presenters"
           features={[
-            "Choose from diverse AI avatars with realistic facial expressions and gestures",
-            "Customize scripts or auto-generate them with AI assistance",
-            "Select from multilingual, human-like voiceovers with emotional tones",
-            "Sync avatar lip movement seamlessly with your chosen voice track",
+            "50+ diverse AI avatars with natural expressions",
+            "Generate scripts or use your own content",
+            "40+ languages with natural-sounding voices",
+            "Perfect lip-sync for realistic presentation"
           ]}
-          cta="Start Creating →"
-          extraLinks={["Explore all Voices "]}
+          cta="Start Creating"
+          extraLinks={["Explore All Avatars"]}
           gradient
         />
+        
         <FeatureCard
           image={videoEditor}
-          title="Video Editor"
-          subtitle="Trim, caption, add transitions or voiceovers with a drag-and-drop interface — like Canva for videos."
+          title="Advanced Video Editor"
+          subtitle="Professional editing tools for perfect results every time"
           features={[
-            "Intuitive timeline editor with drag-and-drop functionality",
-            "Text overlays, captions, and subtitles with customizable styles",
-            "Transition effects library with preview capabilities",
-            "Audio mixing with background music and voiceover tracks",
+            "Drag-and-drop interface with multi-track timeline",
+            "Auto-captions with perfect timing",
+            "100+ transitions and effects",
+            "Audio mixing with voice balancing"
           ]}
-          cta="Try the Editor "
+          cta="Try the Editor"
           reverse
         />
       </div>

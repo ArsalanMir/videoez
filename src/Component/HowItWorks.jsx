@@ -34,17 +34,19 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="bg-white py-14 px-4 sm:px-6 lg:px-20">
+    <div className="bg-white py-0 px-0 sm:px-6 lg:px-20"> 
       {/* Headings */}
-      <div className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">How it works?</h1>
-        <p className="mt-3 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+      <div className="text-center mb-10"> 
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 -mb-2"> {/* Move headline a little upwards with negative bottom margin */}
+          How it works?
+        </h1>
+        <p className="mt-2 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Create impactful videos in 4 simple steps — from idea to shareable content using AI.
         </p>
       </div>
 
       {/* Video Categories */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-16">
         {categories.map((item) => (
           <span
             key={item}
@@ -62,18 +64,18 @@ const HowItWorks = () => {
       </div>
 
       {/* Main Content: Image + Steps */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-20 items-center">
         {/* Left Side Image */}
         <div className="flex justify-center">
           <img
             src={screenshot}
             alt="How it works illustration"
-            className="rounded-2xl shadow-lg w-full max-w-[600px] h-auto object-cover"
+            className="rounded-2xl shadow-lg w-full max-w-[100%] max-h-[480px] sm:max-h-[520px] md:max-h-[560px] object-cover"
           />
         </div>
 
         {/* Right Side Steps */}
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-8 px-2 sm:px-0">
           {steps.map((step, index) => {
             const isHighlighted = index === 0 || index === 1;
             return (

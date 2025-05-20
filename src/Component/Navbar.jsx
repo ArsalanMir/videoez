@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import Videoze from "../assets/Videoze.png";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="w-full">
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white text-center text-sm py-2 px-4">
+      <div className="w-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white text-center text-sm py-2 px-4">
         <p className="font-medium">
           LAST CHANCE! New Launch Sale this week!{" "}
           <Link to="/signup" className="underline font-semibold">
@@ -16,13 +20,17 @@ const Navbar = () => {
 
       {/* Main Nav */}
       <nav className="w-full bg-white shadow-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+        <div className="w-full flex items-center justify-between px-4 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={Videoze} alt="Logo" className="h-8 w-auto object-contain" />
+            <img
+              src={Videoze}
+              alt="Logo"
+              className="h-8 w-auto object-contain"
+            />
           </Link>
 
-          {/* Nav Links */}
+          {/* Desktop Links */}
           <div className="hidden md:flex space-x-6 text-gray-800 font-medium">
             <Link to="/features">Features</Link>
             <Link to="/use-cases">Use Cases</Link>
@@ -31,7 +39,7 @@ const Navbar = () => {
             <Link to="/contact">Contact Us</Link>
           </div>
 
-          {/* Buttons */}
+          {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/signup"
@@ -46,7 +54,48 @@ const Navbar = () => {
               Login
             </Link>
           </div>
+
+          {/* Mobile Toggle Button */}
+          <button
+            className="md:hidden text-indigo-600"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white px-4 pb-4 space-y-4">
+            <Link to="/features" className="block text-gray-800">
+              Features
+            </Link>
+            <Link to="/use-cases" className="block text-gray-800">
+              Use Cases
+            </Link>
+            <Link to="/pricing" className="block text-gray-800">
+              Pricing
+            </Link>
+            <Link to="/affiliates" className="block text-gray-800">
+              Affiliates
+            </Link>
+            <Link to="/contact" className="block text-gray-800">
+              Contact Us
+            </Link>
+            <Link
+              to="/signup"
+              className="block bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold text-center"
+            >
+              SignUp
+            </Link>
+            <Link
+              to="/login"
+              className="block border border-indigo-400 text-indigo-600 px-4 py-2 rounded-full text-sm font-semibold text-center"
+            >
+              Login
+            </Link>
+          </div>
+        )}
       </nav>
     </div>
   );

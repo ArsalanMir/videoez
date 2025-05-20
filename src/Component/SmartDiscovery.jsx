@@ -6,159 +6,173 @@ import facelessImg from "../assets/faceless.png";
 
 const SmartDiscovery = () => {
   const commonButtonClass =
-    "inline-flex items-center justify-between gap-3 px-6 py-2 text-sm font-medium text-white rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all w-fit";
+    "inline-flex items-center justify-between gap-2 px-5 py-2 text-sm font-medium text-white rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all w-fit";
 
   return (
-    <section className="bg-white px-4 pt-4 pb-0">
-      {/* Headline */}
-      <div className="text-center mb-6">
-        <h2 className="text-3xl md:text-4xl font-bold">
+    <section className="bg-white px-4 pt-6 pb-0">
+      {/* Headline - moved a bit upward by reducing bottom margin */}
+      <div className="text-center mb-6 mx-4">
+        <h2 className="text-4xl md:text-5xl font-bold">
           For anyone with a{" "}
           <span className="text-purple-500">Story to tell</span>
         </h2>
-        <p className="mt-2 text-gray-600 text-sm md:text-base max-w-xl mx-auto">
+        <p className="mt-3 text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
           Uncover the right audience, tools, and trends to turn your story into
-          Viral Video.
+          viral videos.
         </p>
       </div>
 
       {/* Smart Discovery Main Card */}
-<div className="max-w-7xl mx-auto bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl px-6 py-8 flex flex-col md:flex-row gap-4 items-center shadow-sm mb-6">
-  <div className="md:w-1/2">
-    <img
-      src={facelessImg}
-      alt="Smart Discovery"
-      className="rounded-xl w-full h-auto object-cover max-w-[400px] mx-auto"
-    />
-  </div>
-  <div className="md:w-1/2">
-    <h3 className="text-2xl font-semibold mb-1">
-      Bring Your Story to Life with Smart Discovery
-    </h3>
-    <ul className="space-y-1 text-sm md:text-base text-gray-800">
-      {[
-        "Discover trending content, creators, and topics tailored to you",
-        "Get instant suggestions to boost engagement and reach",
-        "Save time with intelligent recommendations",
-        "Great for educators, marketers, influencers, and creators",
-      ].map((text, i) => (
-        <li key={i} className="flex items-start gap-2">
-          <Star
-            className="w-4 h-4 text-purple-600 mt-1"
-            fill="currentColor"
+      <div className="w-full mx-4 bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-6 flex flex-col md:flex-row gap-8 items-center shadow-sm mb-4">
+        <div
+          className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
+          style={{ minWidth: "500px", minHeight: "350px" }}
+        >
+          <img
+            src={facelessImg}
+            alt="Smart Discovery"
+            className="w-full h-full object-contain"
           />
-          <span>{text}</span>
-        </li>
-      ))}
-    </ul>
-    <div className="mt-3">
-      <a href="#" className={commonButtonClass}>
-        Try it Now
-        <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-base">
-          ➔
-        </span>
-      </a>
-    </div>
-  </div>
-</div>
+        </div>
+        <div className="w-full md:flex-1 px-2">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Bring Your Story to Life with Smart Discovery
+          </h3>
+          <ul className="space-y-3 text-lg text-gray-800">
+            {[
+              "Discover trending content, creators, and topics tailored to you",
+              "Get instant suggestions to boost engagement and reach",
+              "Save time with intelligent recommendations",
+              "Great for educators, marketers, influencers, and creators",
+            ].map((text, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <Star
+                  className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                />
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+            <a href="#" className={commonButtonClass}>
+              Try it Now
+              <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-lg">
+                ➔
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Two Side-by-Side Cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-  {/* Article to Video */}
-  <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
-    <div>
-      <h1 className="text-3xl font-bold text-purple-600 mb-1">
-        Article to Video
-      </h1>
-      <p className="text-sm text-gray-700 mb-2">
-        Transform any Article, Blog post or Webpage into a Professional
-        Video with just one click. Our AI extracts the key points and
-        creates a compelling narrative.
-      </p>
-      <img
-        src={articleImg}
-        alt="Article to Video"
-        className="rounded-lg w-full max-w-[380px] mx-auto mb-2"
-      />
-    </div>
-    <a href="#" className={commonButtonClass}>
-      Explore
-      <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-base">
-        ➔
-      </span>
-    </a>
-  </div>
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mx-4">
+        {/* Article to Video */}
+        <div className="w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-purple-600 mb-6">
+              Article to Video
+            </h1>
+            <p className="text-lg text-gray-700 mb-6">
+              Transform any article, blog post or webpage into a professional
+              video with just one click. Our AI extracts the key points and
+              creates a compelling narrative.
+            </p>
+            <div
+              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3"
+              style={{ width: "100%", height: "300px", maxWidth: "500px" }}
+            >
+              <img
+                src={articleImg}
+                alt="Article to Video"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          <a href="#" className={`${commonButtonClass} mt-7`}>
+            Explore
+            <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-lg">
+              ➔
+            </span>
+          </a>
+        </div>
 
-  {/* Stock Media */}
-  <div className="bg-gradient-to-br from-[#f3e8ff] to-[#e0f2fe] rounded-2xl p-5 shadow-sm flex flex-col justify-between">
-    <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-1">
-        2M+ Stock Media Available
-      </h1>
-      <p className="text-sm text-gray-700 mb-2">
-        Access millions of high quality stock images, videos, music tracks
-        and sound effects to enhance your videos without additional
-        licensing fees.
-      </p>
-      <img
-        src={stockMediaImg}
-        alt="Stock Media"
-        className="rounded-lg w-full max-w-[380px] mx-auto mb-2"
-      />
-    </div>
-    <a href="#" className={commonButtonClass}>
-      Explore Stock Library
-      <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-base">
-        ➔
-      </span>
-    </a>
-  </div>
-</div>
-
+        {/* Stock Media */}
+        <div className="w-full bg-gradient-to-br from-[#f3e8ff] to-[#e0f2fe] rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-6">
+              2M+ Stock Media Available
+            </h1>
+            <p className="text-lg text-gray-700 mb-6">
+              Access millions of high quality stock images, videos, music tracks
+              and sound effects to enhance your videos without additional
+              licensing fees.
+            </p>
+            <div
+              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3"
+              style={{ width: "100%", height: "300px", maxWidth: "500px" }}
+            >
+              <img
+                src={stockMediaImg}
+                alt="Stock Media"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          <a href="#" className={`${commonButtonClass} mt-7`}>
+            Explore Stock Library
+            <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-lg">
+              ➔
+            </span>
+          </a>
+        </div>
+      </div>
 
       {/* Go Faceless Section */}
-      <div className="max-w-7xl mx-auto bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl px-6 py-8 shadow-sm mb-10">
-        {/* Heading moved to top */}
-        <h1 className="text-4xl font-bold mb-1 text-center md:text-left">
+      <div className="w-full mx-4 bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-8 shadow-sm mb-10">
+        <h1 className="text-4xl font-bold mb-6 text-center md:text-left">
           Go Faceless
         </h1>
 
-        <div className="flex flex-col md:flex-row gap-4 items-center">
-          <div className="md:w-1/2">
-            <p className="text-gray-600 mb-1">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="w-full md:w-[60%] px-2">
+            <p className="text-gray-600 text-lg mb-6">
               Generate entire videos using AI-written or your own scripts, with
               relevant scenes and stock visuals.
             </p>
-            <ul className="space-y-1 text-sm md:text-base text-gray-800">
+            <ul className="space-y-4 text-lg text-gray-800">
               {[
                 "Automatically match script scenes with relevant visuals and stock footage",
                 "Add captions and voiceovers with customizable styles",
                 "Apply seamless transitions and dynamic visual effects",
                 "Background music and soundtracks auto-synced with narration",
               ].map((text, i) => (
-                <li key={i} className="flex items-start gap-2">
+                <li key={i} className="flex items-start gap-3">
                   <Star
-                    className="w-4 h-4 text-purple-600 mt-1"
+                    className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0"
                     fill="currentColor"
                   />
                   <span>{text}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-4">
+            <div className="mt-8">
               <a href="#" className={commonButtonClass}>
                 Create faceless video
-                <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-base">
+                <span className="w-6 h-6 bg-white text-[#6B3EFF] rounded-full flex items-center justify-center text-lg">
                   ➔
                 </span>
               </a>
             </div>
           </div>
-          <div className="md:w-1/2">
+          <div
+            className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
+            style={{ minWidth: "500px", minHeight: "350px" }}
+          >
             <img
               src={facelessImg}
               alt="Go Faceless Preview"
-              className="rounded-xl w-full h-auto max-w-[400px] mx-auto"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

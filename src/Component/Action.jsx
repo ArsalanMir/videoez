@@ -8,128 +8,67 @@ import playingVr from "../assets/playingVr.jpg";
 
 const Action = () => {
   return (
-    <section className="pt-8 px-4 bg-white"> 
-      <div className="max-w-7xl mx-auto">
-        {/* Centered Heading with reduced spacing */}
-        <div className="text-center mb-4"> 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            See our <span className="text-purple-500">AI in action</span>
-          </h2>
-          <p className="mt-1 text-gray-600 text-lg"> {/* Reduced mt-2 to mt-1 */}
-            Create stunning videos within no time
-          </p>
-        </div>
+    <section className="w-full bg-white pt-10 px-4">
+      {/* Heading */}
+      <div className="text-center mb-5">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          See our <span className="text-purple-500">AI in action</span>
+        </h2>
+        <p className="mt-2 text-gray-600 text-lg">
+          Create stunning videos within no time
+        </p>
+      </div>
 
-        {/* Images Container - tight spacing */}
-        <div className="relative" style={{ 
-          height: '562px',
-          marginBottom: '0'
-        }}>
-          {/* Left Column Images */}
-          <div className="absolute left-0">
+      {/* Desktop Layout - only visible on lg and up */}
+      <div className="hidden lg:block relative w-full overflow-x-hidden">
+        <div className="relative w-full px-4 lg:px-8 xl:px-16" style={{ height: "562px" }}>
+          {/* Left Column */}
+          <div className="absolute top-0 left-0 w-[calc(50%-16px)]">
             {/* Main Action Image */}
-            <div style={{
-              width: '584px',
-              height: '330px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '0'
-            }}>
-              <img
-                src={ActionImage}
-                alt="Main Action"
-                className="w-full h-full object-cover"
-              />
+            <div className="absolute top-0 left-0 w-full h-[330px] rounded-xl overflow-hidden">
+              <img src={ActionImage} alt="Main Action" className="w-full h-full object-cover" />
             </div>
 
             {/* Girl Image */}
-            <div style={{
-              width: '233px',
-              height: '175px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '367px'
-            }}>
-              <img
-                src={girlImage}
-                alt="Girl"
-                className="w-full h-full object-cover"
-              />
+            <div className="absolute top-[367px] left-0 w-[40%] h-[175px] rounded-xl overflow-hidden">
+              <img src={girlImage} alt="Girl" className="w-full h-full object-cover" />
             </div>
 
             {/* Men Image */}
-            <div style={{
-              width: '321px',
-              height: '175px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '367px',
-              left: '263px'
-            }}>
-              <img
-                src={MenImg}
-                alt="Men"
-                className="w-full h-full object-cover"
-              />
+            <div className="absolute top-[367px] left-[42%] w-[58%] h-[175px] rounded-xl overflow-hidden">
+              <img src={MenImg} alt="Men" className="w-full h-full object-cover" />
             </div>
           </div>
 
-          {/* Right Column Images */}
-          <div className="absolute left-0 ml-[616px]">
-            {/* VR Image */}
-            <div style={{
-              width: '358px',
-              height: '269px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '0'
-            }}>
-              <img
-                src={Vr}
-                alt="VR"
-                className="w-full h-full object-cover"
-              />
+          {/* Middle Column */}
+          <div className="absolute top-0 left-[50%] w-[30%] ml-2">
+            <div className="absolute top-0 w-full h-[269px] rounded-xl overflow-hidden">
+              <img src={Vr} alt="VR" className="w-full h-full object-cover" />
             </div>
-
-            {/* Robot Image */}
-            <div style={{
-              width: '355px',
-              height: '240px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '302px'
-            }}>
-              <img
-                src={Robot}
-                alt="AI Robot"
-                className="w-full h-full object-cover"
-              />
+            <div className="absolute top-[302px] w-full h-[240px] rounded-xl overflow-hidden">
+              <img src={Robot} alt="Robot" className="w-full h-full object-cover" />
             </div>
           </div>
 
-          {/* Far Right Image */}
-          <div className="absolute left-4 ml-[974px]">
-            <div style={{
-              width: '308px',
-              height: '546px',
-              borderRadius: '15px',
-              overflow: 'hidden',
-              position: 'absolute',
-              top: '0'
-            }}>
-              <img
-                src={playingVr}
-                alt="Playing VR"
-                className="w-full h-full object-cover"
-              />
+          {/* Far Right */}
+          <div className="absolute top-0 left-[82%] w-[16%] ml-2">
+            <div className="w-full h-[546px] rounded-xl overflow-hidden">
+              <img src={playingVr} alt="Playing VR" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Layout - only visible on smaller screens */}
+      <div className="lg:hidden flex flex-col gap-4 mt-10 px-4">
+        <img src={ActionImage} alt="Main" className="rounded-xl w-full object-cover" />
+        <div className="flex gap-4">
+          <img src={girlImage} alt="Girl" className="rounded-xl w-1/2 object-cover" />
+          <img src={MenImg} alt="Men" className="rounded-xl w-1/2 object-cover" />
+        </div>
+        <img src={Vr} alt="VR" className="rounded-xl w-full object-cover" />
+        <img src={Robot} alt="Robot" className="rounded-xl w-full object-cover" />
+        <img src={playingVr} alt="Playing VR" className="rounded-xl w-full object-cover" />
       </div>
     </section>
   );

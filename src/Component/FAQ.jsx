@@ -47,18 +47,26 @@ const faqs = [
     question: "What makes your discovery feature unique?",
     answer: "",
   },
+  {
+    question: "why do you join us will it be benefit for you ?",
+    answer: "",
+  },
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = React.useState(0);
 
   const toggleIndex = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-20 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="pt-8 pb-16 bg-white w-full">
+      {/* Remove padding here so bg can go edge-to-edge */}
+
+      <div className="mx-auto max-w-none px-4 sm:px-6 lg:px-24">
+        {/* Larger horizontal padding but inside so background fills full width */}
+
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-gray-900">Frequently asked question</h2>
           <p className="text-gray-500 mt-2">
@@ -66,11 +74,11 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {faqs.map((item, index) => (
             <div
               key={index}
-              className={`bg-white shadow-sm rounded-xl p-5 transition-all duration-200 border border-gray-100`}
+              className="bg-white shadow-sm rounded-xl p-5 border border-gray-100 transition-all duration-200"
             >
               <button
                 className="flex justify-between items-center w-full"
@@ -95,5 +103,8 @@ const FAQ = () => {
     </section>
   );
 };
+
+
+
 
 export default FAQ;
