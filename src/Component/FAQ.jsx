@@ -74,7 +74,7 @@ const FAQ = () => {
 
   return (
     <section className="pt-8 pb-16 bg-white w-full">
-      <div className="mx-auto max-w-none px-4 sm:px-6 lg:px-24">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-24">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-gray-900">Frequently asked question</h2>
           <p className="text-gray-500 mt-2">
@@ -121,5 +121,6 @@ const FAQ = () => {
     </section>
   );
 };
+
 
 export default FAQ;

@@ -34,10 +34,10 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="bg-white py-0 px-0 sm:px-6 lg:px-20"> 
+    <div className="bg-white py-0 px-0 sm:px-6 lg:px-20">
       {/* Headings */}
-      <div className="text-center mb-10"> 
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 -mb-2"> {/* Move headline a little upwards with negative bottom margin */}
+      <div className="text-center mb-10">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 -mb-2">
           How it works?
         </h1>
         <p className="mt-2 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -91,7 +91,8 @@ const HowItWorks = () => {
                     style={
                       isHighlighted
                         ? {
-                            background: "linear-gradient(84.88deg, #413FC2 18.63%, #C668FD 81.37%)"
+                            background:
+                              "linear-gradient(84.88deg, #413FC2 18.63%, #C668FD 81.37%)",
                           }
                         : {}
                     }

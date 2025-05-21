@@ -99,7 +99,7 @@ const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState("Annually");
 
   return (
-    <div className="py-10 px-6 lg:px-24 bg-white text-center">
+    <div className="max-w-[90rem] mx-auto py-10 px-6 lg:px-24 bg-white text-center">
       <h2 className="text-2xl sm:text-3xl font-semibold">
         <span className="text-[#6B4EFF] font-bold">Strikingly Powerful</span>,
         Yet Unbelievably Affordable
@@ -299,7 +299,8 @@ const PricingPlans = () => {
                       <div className="flex items-center gap-2 pl-6">
                         {plan.socialIcons.map((icon) => {
                           const IconComponent = socialIconsMap[icon];
-                          const iconColor = socialIconColors[icon] || "#6B4EFF";
+                          const iconColor =
+                            socialIconColors[icon] || "#6B4EFF";
                           return IconComponent ? (
                             <IconComponent
                               key={icon}
@@ -323,11 +324,6 @@ const PricingPlans = () => {
             </div>
           )
         )}
-      </div>
-      <div className="mt-6">
-        <button className="text-[#6B4EFF] font-medium rounded-full border border-[#6B4EFF] px-6 py-2 mt-4 hover:bg-[#f2f0ff] transition">
-          Compare all Plans
-        </button>
       </div>
     </div>
   );

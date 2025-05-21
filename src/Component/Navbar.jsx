@@ -20,7 +20,7 @@ const Navbar = () => {
 
       {/* Main Nav */}
       <nav className="w-full bg-white shadow-md">
-        <div className="w-full flex items-center justify-between px-4 py-4">
+        <div className="max-w-[90rem] mx-auto flex items-center justify-between px-4 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img

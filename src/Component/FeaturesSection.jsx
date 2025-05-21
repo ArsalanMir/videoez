@@ -37,38 +37,29 @@ const FeatureCard = ({
       </div>
     )}
 
-    <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-4 items-center`}>
+    <div
+      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-4 items-center`}
+    >
       {/* Image container - matching Card1 */}
       <div className="w-full md:w-[40%] aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-2">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-contain"
-        />
+        <img src={image} alt={title} className="w-full h-full object-contain" />
       </div>
 
       {/* Content with larger text */}
       <div className="w-full md:w-[60%]">
         {/* Larger heading */}
-        <h3 className="text-xl md:text-2xl font-bold mb-3 leading-snug">
-          {title}
-        </h3>
-        
+        <h3 className="text-xl md:text-2xl font-bold mb-3 leading-snug">{title}</h3>
+
         {/* Larger subtitle */}
         {subtitle && (
-          <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
-            {subtitle}
-          </p>
+          <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">{subtitle}</p>
         )}
-        
+
         {/* Larger feature list */}
         <ul className="space-y-2 text-sm md:text-base text-gray-700">
           {features.map((item, idx) => (
             <li key={idx} className="flex items-start gap-2">
-              <Star
-                className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0"
-                fill="currentColor"
-              />
+              <Star className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor" />
               <span>{item}</span>
             </li>
           ))}
@@ -99,51 +90,55 @@ const FeatureCard = ({
 const FeatureSection = () => {
   return (
     <section className="bg-white pt-0 pb-8 px-2 md:px-4">
+      {/* Container for alignment */}
       <Card1 />
+      <div className="max-w-[90rem] mx-auto px-4">
+        
 
-      <div className="space-y-6 mt-6">
-        <FeatureCard
-          image={adGenerator}
-          title="Video Ad Maker"
-          subtitle="Generate professional videos directly from your eCommerce store URL"
-          features={[
-            "Automatically fetches product details, images and descriptions",
-            "AI-powered ad scripts optimized for conversions",
-            "Pre-designed templates for different product categories",
-            "Custom branding with your logo and color scheme"
-          ]}
-          cta="Try Smart Editing"
-          reverse
-        />
-        
-        <FeatureCard
-          image={aiAvatar}
-          title="AI Avatar Videos"
-          subtitle="Create engaging videos with realistic digital presenters"
-          features={[
-            "50+ diverse AI avatars with natural expressions",
-            "Generate scripts or use your own content",
-            "40+ languages with natural-sounding voices",
-            "Perfect lip-sync for realistic presentation"
-          ]}
-          cta="Start Creating"
-          extraLinks={["Explore All Avatars"]}
-          gradient
-        />
-        
-        <FeatureCard
-          image={videoEditor}
-          title="Advanced Video Editor"
-          subtitle="Professional editing tools for perfect results every time"
-          features={[
-            "Drag-and-drop interface with multi-track timeline",
-            "Auto-captions with perfect timing",
-            "100+ transitions and effects",
-            "Audio mixing with voice balancing"
-          ]}
-          cta="Try the Editor"
-          reverse
-        />
+        <div className="space-y-6 mt-6">
+          <FeatureCard
+            image={adGenerator}
+            title="Video Ad Maker"
+            subtitle="Generate professional videos directly from your eCommerce store URL"
+            features={[
+              "Automatically fetches product details, images and descriptions",
+              "AI-powered ad scripts optimized for conversions",
+              "Pre-designed templates for different product categories",
+              "Custom branding with your logo and color scheme",
+            ]}
+            cta="Try Smart Editing"
+            reverse
+          />
+
+          <FeatureCard
+            image={aiAvatar}
+            title="AI Avatar Videos"
+            subtitle="Create engaging videos with realistic digital presenters"
+            features={[
+              "50+ diverse AI avatars with natural expressions",
+              "Generate scripts or use your own content",
+              "40+ languages with natural-sounding voices",
+              "Perfect lip-sync for realistic presentation",
+            ]}
+            cta="Start Creating"
+            extraLinks={["Explore All Avatars"]}
+            gradient
+          />
+
+          <FeatureCard
+            image={videoEditor}
+            title="Advanced Video Editor"
+            subtitle="Professional editing tools for perfect results every time"
+            features={[
+              "Drag-and-drop interface with multi-track timeline",
+              "Auto-captions with perfect timing",
+              "100+ transitions and effects",
+              "Audio mixing with voice balancing",
+            ]}
+            cta="Try the Editor"
+            reverse
+          />
+        </div>
       </div>
     </section>
   );
