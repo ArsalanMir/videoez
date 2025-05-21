@@ -196,33 +196,31 @@ const PricingPlans = () => {
                 </p>
                 <ul className="text-sm text-left space-y-2 mb-6">
                   {plan.features.map((feature, index) => (
-                    <li key={index} className="flex flex-col items-start gap-1">
-                      <div className="flex items-start gap-2">
-                        <span className="text-[#6B4EFF] text-lg">✔️</span>
-                        {feature === "Social Media" ? (
-                          <span className="text-left">Social Media</span>
-                        ) : (
-                          feature
-                        )}
-                      </div>
-                      {feature === "Social Media" && (
-                        <div className="flex items-center gap-2 pl-6">
-                          {plan.socialIcons.map((icon) => {
-                            const IconComponent = socialIconsMap[icon];
-                            const iconColor =
-                              socialIconColors[icon] || "#6B4EFF";
-                            return IconComponent ? (
-                              <IconComponent
-                                key={icon}
-                                style={{
-                                  color: iconColor,
-                                  transition: "transform 0.2s",
-                                }}
-                                className="text-lg cursor-pointer hover:scale-110"
-                              />
-                            ) : null;
-                          })}
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-[#6B4EFF] text-lg">✔️</span>
+                      {feature === "Social Media" ? (
+                        <div className="flex items-center gap-2">
+                          <span>Social Media</span>
+                          <div className="flex items-center gap-1">
+                            {plan.socialIcons.map((icon) => {
+                              const IconComponent = socialIconsMap[icon];
+                              const iconColor =
+                                socialIconColors[icon] || "#6B4EFF";
+                              return IconComponent ? (
+                                <IconComponent
+                                  key={icon}
+                                  style={{
+                                    color: iconColor,
+                                    transition: "transform 0.2s",
+                                  }}
+                                  className="text-lg cursor-pointer hover:scale-110"
+                                />
+                              ) : null;
+                            })}
+                          </div>
                         </div>
+                      ) : (
+                        <span>{feature}</span>
                       )}
                     </li>
                   ))}
@@ -286,33 +284,31 @@ const PricingPlans = () => {
               </p>
               <ul className="text-sm text-left space-y-2 mb-6">
                 {plan.features.map((feature, index) => (
-                  <li key={index} className="flex flex-col items-start gap-1">
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#6B4EFF] text-lg">✔️</span>
-                      {feature === "Social Media" ? (
-                        <span className="text-left">Social Media</span>
-                      ) : (
-                        feature
-                      )}
-                    </div>
-                    {feature === "Social Media" && (
-                      <div className="flex items-center gap-2 pl-6">
-                        {plan.socialIcons.map((icon) => {
-                          const IconComponent = socialIconsMap[icon];
-                          const iconColor =
-                            socialIconColors[icon] || "#6B4EFF";
-                          return IconComponent ? (
-                            <IconComponent
-                              key={icon}
-                              style={{
-                                color: iconColor,
-                                transition: "transform 0.2s",
-                              }}
-                              className="text-lg cursor-pointer hover:scale-110"
-                            />
-                          ) : null;
-                        })}
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-[#6B4EFF] text-lg">✔️</span>
+                    {feature === "Social Media" ? (
+                      <div className="flex items-center gap-2">
+                        <span>Social Media</span>
+                        <div className="flex items-center gap-1">
+                          {plan.socialIcons.map((icon) => {
+                            const IconComponent = socialIconsMap[icon];
+                            const iconColor =
+                              socialIconColors[icon] || "#6B4EFF";
+                            return IconComponent ? (
+                              <IconComponent
+                                key={icon}
+                                style={{
+                                  color: iconColor,
+                                  transition: "transform 0.2s",
+                                }}
+                                className="text-lg cursor-pointer hover:scale-110"
+                              />
+                            ) : null;
+                          })}
+                        </div>
                       </div>
+                    ) : (
+                      <span>{feature}</span>
                     )}
                   </li>
                 ))}

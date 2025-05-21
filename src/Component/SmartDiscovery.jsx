@@ -25,14 +25,11 @@ const SmartDiscovery = () => {
 
         {/* Smart Discovery Main Card */}
         <div className="w-full bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-6 flex flex-col md:flex-row gap-8 items-center shadow-sm mb-4">
-          <div
-            className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
-            style={{ minHeight: "350px" }}
-          >
+          <div className="w-full md:w-[500px] h-[400px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
             <img
               src={facelessImg}
               alt="Smart Discovery"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="w-full md:flex-1 px-2">
@@ -80,13 +77,13 @@ const SmartDiscovery = () => {
                 creates a compelling narrative.
               </p>
               <div
-                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
-                style={{ width: "100%", maxWidth: "500px", height: "300px" }}
+                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center mx-auto"
+                style={{ width: "100%", maxWidth: "500px", height: "320px" }}
               >
                 <img
                   src={articleImg}
                   alt="Article to Video"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -110,13 +107,13 @@ const SmartDiscovery = () => {
                 licensing fees.
               </p>
               <div
-                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
-                style={{ width: "100%", maxWidth: "500px", height: "300px" }}
+                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center mx-auto"
+                style={{ width: "100%", maxWidth: "500px", height: "320px" }}
               >
                 <img
                   src={stockMediaImg}
                   alt="Stock Media"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -166,14 +163,11 @@ const SmartDiscovery = () => {
                 </a>
               </div>
             </div>
-            <div
-              className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
-              style={{ minHeight: "350px" }}
-            >
+            <div className="w-full md:w-[500px] h-[400px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
               <img
                 src={facelessImg}
                 alt="Go Faceless Preview"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

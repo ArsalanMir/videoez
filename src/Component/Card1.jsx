@@ -38,12 +38,12 @@ const Card1 = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-4">
-            {/* Smaller image container */}
-            <div className="w-full md:w-[38%] aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3">
+            {/* Updated image container to be square and slightly bigger */}
+            <div className="w-full md:w-[35%] aspect-square bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3">
               <img
                 src={feature}
                 alt="Business meeting"
-                className="w-full h-full object-contain"
+                className="w-[115%] h-[115%] object-cover"
               />
             </div>
 

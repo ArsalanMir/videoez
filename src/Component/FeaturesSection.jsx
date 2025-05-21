@@ -23,7 +23,6 @@ const FeatureCard = ({
         : "bg-gradient-to-br from-[#f4f4fd] to-[#fefefe]"
     } rounded-xl p-4 shadow-sm border border-[#e0d4fc]`}
   >
-    {/* Tags - matching Card1 size */}
     {tags && (
       <div className="flex flex-wrap gap-2 justify-center mb-4">
         {tags.map((tag, index) => (
@@ -38,34 +37,40 @@ const FeatureCard = ({
     )}
 
     <div
-      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-4 items-center`}
+      className={`flex flex-col ${
+        reverse ? "md:flex-row-reverse" : "md:flex-row"
+      } gap-4 items-center`}
     >
-      {/* Image container - matching Card1 */}
-      <div className="w-full md:w-[40%] aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-2">
-        <img src={image} alt={title} className="w-full h-full object-contain" />
+      {/* Image container smaller stretch */}
+      <div className="w-full md:w-[35%] aspect-square bg-gray-100 overflow-hidden flex items-center justify-center rounded-md">
+        <img
+          src={image}
+          alt={title}
+          className="w-[115%] h-[115%] object-cover"
+        />
       </div>
 
-      {/* Content with larger text */}
-      <div className="w-full md:w-[60%]">
-        {/* Larger heading */}
+      <div className="w-full md:w-[62%]">
         <h3 className="text-xl md:text-2xl font-bold mb-3 leading-snug">{title}</h3>
 
-        {/* Larger subtitle */}
         {subtitle && (
-          <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">{subtitle}</p>
+          <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
+            {subtitle}
+          </p>
         )}
 
-        {/* Larger feature list */}
         <ul className="space-y-2 text-sm md:text-base text-gray-700">
           {features.map((item, idx) => (
             <li key={idx} className="flex items-start gap-2">
-              <Star className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor" />
+              <Star
+                className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+              />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        {/* Buttons - matching Card1 size */}
         <div className="flex flex-wrap gap-3 mt-4">
           <button className="text-white px-5 py-2 rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all flex items-center gap-2 text-sm font-medium">
             {cta}
@@ -90,11 +95,8 @@ const FeatureCard = ({
 const FeatureSection = () => {
   return (
     <section className="bg-white pt-0 pb-8 px-2 md:px-4">
-      {/* Container for alignment */}
       <Card1 />
       <div className="max-w-[90rem] mx-auto px-4">
-        
-
         <div className="space-y-6 mt-6">
           <FeatureCard
             image={adGenerator}
