@@ -8,53 +8,65 @@ const faqs = [
       "Getting started is easy! Sign up, pick a template or theme, enter your script or ideas, and let our AI handle the rest. In just a few clicks, your video will be ready to download or share on social media.",
   },
   {
-    question: "Can I use the stock media for commercial projects?",
-    answer: "",
-  },
-  {
     question: "Is there a free version available?",
-    answer: "",
-  },
-  {
-    question: "Do I need editing skills to create content?",
-    answer: "",
+    answer: "We provide a free trial so you can try out our tool and determine if it meets your needs. You’re free to cancel at any time during the trial with no commitment.",
   },
   {
     question: "What formats can I download my content in?",
-    answer: "",
-  },
-  {
-    question: "Can I schedule posts directly from the platform?",
-    answer: "",
+    answer: "You can download your content in a variety of popular formats, including MP4 for video and MOV for higher-quality exports. Additional format options may be available depending on your project settings and export preferences.",
   },
   {
     question: "Is there a limit to how many videos I can create?",
-    answer: "",
-  },
-  {
-    question: "Can I create both short and long videos?",
-    answer: "",
+    answer: "That depends on your plan and the available credits. Free and lower-tier plans may have limits, while higher-tier plans often allow more or unlimited video creation.",
   },
   {
     question: "How does your AI generate video content?",
-    answer: "",
-  },
-  {
-    question: "Is it possible to customize templates?",
-    answer: "",
+    answer: "Our AI uses text prompts or scripts to automatically generate videos, combining voiceovers, stock media, animations, and transitions to produce high-quality content with minimal effort.",
   },
   {
     question: "What makes your discovery feature unique?",
-    answer: "",
+    answer: "Our discovery feature uses smart algorithms to suggest trending topics, content ideas, and templates tailored to your niche and audience preferences—helping you stay relevant and boost engagement.",
   },
   {
-    question: "why do you join us will it be benefit for you ?",
-    answer: "",
+    question: "Can I use the stock media for commercial projects?",
+    answer: "Yes, all stock media included in the platform is licensed for commercial use, so you're free to use it in your work and ads to monetize content.",
   },
+  {
+    question: "Do I need editing skills to create content?",
+    answer: "Not at all. Our platform is designed for users of all experience levels. The AI handles most of the editing, and our drag-and-drop interface makes customization easy and intuitive.",
+  },
+  {
+    question: "Can I schedule posts directly from the platform?",
+    answer: "Yes, you can schedule and publish your videos directly to social media platforms from within the dashboard, streamlining your content workflow.",
+  },
+  {
+    question: "Can I create both short and long videos?",
+    answer: "Absolutely. You can create videos in various lengths—from quick 15-second clips to full-length explainer or promotional videos—depending on your project needs.",
+  },
+  {
+    question: "Is it possible to customize templates?",
+    answer: "Yes, all templates are fully customizable. You can edit text, swap media, adjust colors, and add branding elements to match your unique style.",
+  },
+  {
+    question: "How Are Credits Charged?",
+    answer: {
+      credits:"Credits are charged as follows:",
+      ideaDiscovery: "15 credits per idea generated.",
+      avatarVideo: "33 credits per 1-minute video.",
+      facelessImageVideo: "41 credits per 1-minute video.",
+      facelessStockFootageVideo: "25 credits per 1-minute video.",
+      note: "Charges are based on whole minutes. For example, a Faceless Image video that is 3 minutes and 13 seconds will be charged as 4 minutes (4 x 41 = 164 credits). While we strive for accuracy, there may be slight discrepancies in calculations.",
+      imageRegeneration: "1 credit per additional regeneration.",
+      thumbnailGeneration: "1 credit for every 1 thumbnail generated.",
+      scriptRegeneration: "1 credit for each one-minute AI script.",
+      avatarVideoExport: "6 credits for every 1 minute of video.",
+      videoExport: "No charge for exporting the video."
+    }
+  }
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleIndex = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -62,11 +74,7 @@ const FAQ = () => {
 
   return (
     <section className="pt-8 pb-16 bg-white w-full">
-      {/* Remove padding here so bg can go edge-to-edge */}
-
       <div className="mx-auto max-w-none px-4 sm:px-6 lg:px-24">
-        {/* Larger horizontal padding but inside so background fills full width */}
-
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-gray-900">Frequently asked question</h2>
           <p className="text-gray-500 mt-2">
@@ -94,7 +102,17 @@ const FAQ = () => {
                 )}
               </button>
               {activeIndex === index && item.answer && (
-                <p className="mt-4 text-sm text-gray-600">{item.answer}</p>
+                typeof item.answer === 'string' ? (
+                  <p className="mt-4 text-sm text-gray-600">{item.answer}</p>
+                ) : (
+                  <div className="mt-4 text-sm text-gray-600 space-y-1">
+                    {Object.entries(item.answer).map(([key, value]) => (
+                      <p key={key}>
+                        <strong>{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}:</strong> {value}
+                      </p>
+                    ))}
+                  </div>
+                )
               )}
             </div>
           ))}
@@ -103,8 +121,5 @@ const FAQ = () => {
     </section>
   );
 };
-
-
-
 
 export default FAQ;
