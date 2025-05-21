@@ -9,9 +9,9 @@ const SmartDiscovery = () => {
     "inline-flex items-center justify-between gap-2 px-5 py-2 text-sm font-medium text-white rounded-full shadow-md bg-gradient-to-r from-[#3b2ff0] to-[#d66bfc] hover:opacity-90 transition-all w-fit";
 
   return (
-    <section className="bg-white px-4 pt-6 pb-0">
-      {/* Headline - moved a bit upward by reducing bottom margin */}
-      <div className="text-center mb-6 mx-4">
+    <section className="bg-white px-4 pt-2 pb-0">
+      {/* Headline */}
+      <div className="text-center mb-6">
         <h2 className="text-4xl md:text-5xl font-bold">
           For anyone with a{" "}
           <span className="text-purple-500">Story to tell</span>
@@ -23,10 +23,10 @@ const SmartDiscovery = () => {
       </div>
 
       {/* Smart Discovery Main Card */}
-      <div className="w-full mx-4 bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-6 flex flex-col md:flex-row gap-8 items-center shadow-sm mb-4">
+      <div className="w-full bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-6 flex flex-col md:flex-row gap-8 items-center shadow-sm mb-4">
         <div
           className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
-          style={{ minWidth: "500px", minHeight: "350px" }}
+          style={{ minHeight: "350px" }}
         >
           <img
             src={facelessImg}
@@ -66,7 +66,7 @@ const SmartDiscovery = () => {
       </div>
 
       {/* Two Side-by-Side Cards */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mx-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Article to Video */}
         <div className="w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
           <div>
@@ -79,8 +79,8 @@ const SmartDiscovery = () => {
               creates a compelling narrative.
             </p>
             <div
-              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3"
-              style={{ width: "100%", height: "300px", maxWidth: "500px" }}
+              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
+              style={{ width: "100%", maxWidth: "500px", height: "300px" }}
             >
               <img
                 src={articleImg}
@@ -109,8 +109,8 @@ const SmartDiscovery = () => {
               licensing fees.
             </p>
             <div
-              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3"
-              style={{ width: "100%", height: "300px", maxWidth: "500px" }}
+              className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center p-3 mx-auto"
+              style={{ width: "100%", maxWidth: "500px", height: "300px" }}
             >
               <img
                 src={stockMediaImg}
@@ -129,13 +129,13 @@ const SmartDiscovery = () => {
       </div>
 
       {/* Go Faceless Section */}
-      <div className="w-full mx-4 bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-8 shadow-sm mb-10">
+      <div className="w-full bg-gradient-to-br from-[#f3e8ff] to-[#dbeafe] rounded-2xl p-8 shadow-sm mb-10">
         <h1 className="text-4xl font-bold mb-6 text-center md:text-left">
           Go Faceless
         </h1>
 
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-[60%] px-2">
+          <div className="w-full md:w-3/5 px-2">
             <p className="text-gray-600 text-lg mb-6">
               Generate entire videos using AI-written or your own scripts, with
               relevant scenes and stock visuals.
@@ -167,7 +167,7 @@ const SmartDiscovery = () => {
           </div>
           <div
             className="w-full md:w-[500px] h-[350px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center p-3"
-            style={{ minWidth: "500px", minHeight: "350px" }}
+            style={{ minHeight: "350px" }}
           >
             <img
               src={facelessImg}

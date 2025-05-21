@@ -25,9 +25,9 @@ const Footer = () => {
       </div>
 
       {/* Footer Content */}
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 mt-10">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
-          {/* Main content aligned full left */}
+      <div className="mx-auto max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-4.5rem)] md:max-w-[calc(100%-12rem)] px-6 sm:px-10 md:px-12 mt-10">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+          {/* Main content aligned to the left */}
           <div className="flex-1 md:max-w-md">
             <div className="flex flex-col items-start space-y-5">
               <Link to="/" className="flex items-center space-x-2 mb-2">
@@ -38,43 +38,44 @@ const Footer = () => {
                 />
               </Link>
               <p className="text-sm leading-relaxed">
-                Videoze is a leading AI services provider, offering custom software
-                development and innovative AI integration to enhance efficiency,
-                scalability, and user experiences across diverse industries.
+                Videoze is a leading AI services provider, offering custom
+                software development and innovative AI integration to enhance
+                efficiency, scalability, and user experiences across diverse
+                industries.
               </p>
-              <div className="flex gap-4 text-xl text-gray-600">
+              <div className="flex gap-3">
                 <a
                   href="#"
+                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
                   aria-label="Facebook"
-                  className="hover:text-[#4e00c2] transition cursor-pointer"
                 >
                   <FaFacebookF />
                 </a>
                 <a
                   href="#"
+                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
                   aria-label="Instagram"
-                  className="hover:text-[#f255e6] transition cursor-pointer"
                 >
                   <FaInstagram />
                 </a>
                 <a
                   href="#"
+                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
                   aria-label="LinkedIn"
-                  className="hover:text-[#0077b5] transition cursor-pointer"
                 >
                   <FaLinkedinIn />
                 </a>
                 <a
                   href="#"
+                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
                   aria-label="YouTube"
-                  className="hover:text-red-600 transition cursor-pointer"
                 >
                   <FaYoutube />
                 </a>
                 <a
                   href="#"
+                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
                   aria-label="Twitter"
-                  className="hover:text-sky-500 transition cursor-pointer"
                 >
                   <FaTwitter />
                 </a>
@@ -82,9 +83,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom Links aligned full right */}
-          <div className="w-full md:w-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm text-gray-800 md:ml-auto md:mr-0">
+          {/* Bottom Links aligned to the right */}
+          <div className="flex-1 md:flex md:justify-end">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm text-gray-800">
               <div>
                 <h4 className="font-semibold mb-3 text-gray-900">Company</h4>
                 <ul className="space-y-2">
@@ -166,8 +167,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom copyright - full width */}
-        <div className="mt-10 text-center text-sm text-gray-500 font-bold">
+        {/* Bottom copyright */}
+        <div className="mt-10 text-center text-sm text-black font-bold">
           Copyright © 2025 Videoze AI LLC. All rights reserved
         </div>
       </div>

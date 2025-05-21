@@ -11,7 +11,7 @@ const Navbar = () => {
       {/* Announcement Bar */}
       <div className="w-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white text-center text-sm py-2 px-4">
         <p className="font-medium">
-          LAST CHANCE! New Launch Sale this week!{" "}
+          LAST CHANCE! New Launch Sale Ends Soon!{" "}
           <Link to="/signup" className="underline font-semibold">
             Click here to Sign-up and save 25%
           </Link>

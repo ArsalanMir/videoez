@@ -16,11 +16,11 @@ const socialIconsMap = {
 };
 
 const socialIconColors = {
-  ig: "#E4405F",      // Instagram pink/red
-  fb: "#1877F2",      // Facebook blue
-  yt: "#FF0000",      // YouTube red
-  tw: "#1DA1F2",      // Twitter blue
-  li: "#0A66C2",      // LinkedIn blue
+  ig: "#E4405F", // Instagram pink/red
+  fb: "#1877F2", // Facebook blue
+  yt: "#FF0000", // YouTube red
+  tw: "#1DA1F2", // Twitter blue
+  li: "#0A66C2", // LinkedIn blue
 };
 
 const plans = [
@@ -135,108 +135,195 @@ const PricingPlans = () => {
 
       {/* Plans */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-        {plans.map((plan, idx) => (
-          <div
-            key={idx}
-            className={`relative rounded-xl p-6 shadow-md bg-white ${
-              plan.mostPopular
-                ? "border-2 border-transparent bg-clip-padding"
-                : "border border-gray-200"
-            }`}
-            style={{
-              borderImageSource: plan.mostPopular
-                ? "linear-gradient(84.88deg, #413FC2 18.63%, #C668FD 81.37%)"
-                : "",
-              borderImageSlice: 1,
-            }}
-          >
-            {plan.mostPopular && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6B4EFF] text-white text-xs px-2 py-1 rounded-full">
-                Most Popular
-              </span>
-            )}
-            <h1 className="text-4xl font-bold mb-2 text-left bg-gradient-to-r from-[#413FC2] to-[#C668FD] bg-clip-text text-transparent">
-              {plan.title}
-            </h1>
-            <div className="text-left mb-4">
-              <p className="text-2xl font-bold flex items-center gap-1">
-                {plan.price === "Custom"
-                  ? "Custom"
-                  : billingCycle === "Annually"
-                  ? Math.round(parseInt(plan.price.replace("$", "")) * 0.75) + "$"
-                  : plan.price}
-                {plan.price !== "Custom" && (
-                  <span className="text-base font-medium text-gray-500">
-                    /{billingCycle === "Annually" ? "Year" : "Month"}
+        {plans.map((plan, idx) =>
+          plan.mostPopular ? (
+            <div
+              key={idx}
+              className="relative rounded-xl p-[3px] bg-gradient-to-r from-[#413FC2] to-[#C668FD] shadow-md"
+            >
+              <div className="bg-white rounded-xl p-6">
+                {plan.mostPopular && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6B4EFF] text-white text-xs px-2 py-1 rounded-full">
+                    Most Popular
                   </span>
                 )}
-              </p>
-              <hr className="mt-3 border-t border-gray-200" />
-            </div>
-
-            <div className="inline-flex rounded-md overflow-hidden border border-[#D3C5FF] p-1 mt-4 bg-[#F4F0FF]">
-              {plan.credits.map((credit, i) => (
-                <button
-                  key={i}
-                  className={`px-4 py-1 text-sm font-medium rounded-md transition-all duration-300 ${
-                    i === 0
-                      ? "bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white shadow"
-                      : "text-[#6B4EFF] hover:bg-white"
-                  }`}
-                >
-                  {credit}
-                </button>
-              ))}
-            </div>
-
-            <p className="text-sm font-semibold text-gray-700 mt-4 mb-1 text-left">
-              Credits per month
-            </p>
-            <p className="text-sm font-medium mb-4 text-left">
-              ✔️{plan.monthlyCredits}
-            </p>
-
-            {/* Features */}
-            <p className="text-sm font-semibold text-gray-700 mt-6 mb-1 text-left">
-              Core Features
-            </p>
-            <ul className="text-sm text-left space-y-2 mb-6">
-              {plan.features.map((feature, index) => (
-                <li key={index} className="flex flex-col items-start gap-1">
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#6B4EFF] text-lg">✔️</span>
-                    {feature === "Social Media" ? (
-                      <span className="text-left">Social Media</span>
-                    ) : (
-                      feature
+                <h1 className="text-4xl font-bold mb-2 text-left bg-gradient-to-r from-[#413FC2] to-[#C668FD] bg-clip-text text-transparent">
+                  {plan.title}
+                </h1>
+                <div className="text-left mb-4">
+                  <p className="text-2xl font-bold flex items-center gap-1">
+                    {plan.price === "Custom"
+                      ? "Custom"
+                      : billingCycle === "Annually"
+                      ? Math.round(
+                          parseInt(plan.price.replace("$", "")) * 0.75
+                        ) + "$"
+                      : plan.price}
+                    {plan.price !== "Custom" && (
+                      <span className="text-base font-medium text-gray-500">
+                        /{billingCycle === "Annually" ? "Year" : "Month"}
+                      </span>
                     )}
-                  </div>
-                  {feature === "Social Media" && (
-                    <div className="flex items-center gap-2 pl-6">
-                      {plan.socialIcons.map((icon) => {
-                        const IconComponent = socialIconsMap[icon];
-                        const iconColor = socialIconColors[icon] || "#6B4EFF";
-                        return IconComponent ? (
-                          <IconComponent
-                            key={icon}
-                            style={{ color: iconColor, transition: "transform 0.2s" }}
-                            className="text-lg cursor-pointer hover:scale-110"
-                          />
-                        ) : null;
-                      })}
-                    </div>
+                  </p>
+                  <hr className="mt-3 border-t border-gray-200" />
+                </div>
+
+                <div className="inline-flex rounded-md overflow-hidden border border-[#D3C5FF] p-1 mt-4 bg-[#F4F0FF]">
+                  {plan.credits.map((credit, i) => (
+                    <button
+                      key={i}
+                      className={`px-4 py-1 text-sm font-medium rounded-md transition-all duration-300 ${
+                        i === 0
+                          ? "bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white shadow"
+                          : "text-[#6B4EFF] hover:bg-white"
+                      }`}
+                    >
+                      {credit}
+                    </button>
+                  ))}
+                </div>
+
+                <p className="text-sm font-semibold text-gray-700 mt-4 mb-1 text-left">
+                  Credits per month
+                </p>
+                <p className="text-sm font-medium mb-4 text-left">
+                  ✔️{plan.monthlyCredits}
+                </p>
+
+                {/* Features */}
+                <p className="text-sm font-semibold text-gray-700 mt-6 mb-1 text-left">
+                  Core Features
+                </p>
+                <ul className="text-sm text-left space-y-2 mb-6">
+                  {plan.features.map((feature, index) => (
+                    <li key={index} className="flex flex-col items-start gap-1">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#6B4EFF] text-lg">✔️</span>
+                        {feature === "Social Media" ? (
+                          <span className="text-left">Social Media</span>
+                        ) : (
+                          feature
+                        )}
+                      </div>
+                      {feature === "Social Media" && (
+                        <div className="flex items-center gap-2 pl-6">
+                          {plan.socialIcons.map((icon) => {
+                            const IconComponent = socialIconsMap[icon];
+                            const iconColor =
+                              socialIconColors[icon] || "#6B4EFF";
+                            return IconComponent ? (
+                              <IconComponent
+                                key={icon}
+                                style={{
+                                  color: iconColor,
+                                  transition: "transform 0.2s",
+                                }}
+                                className="text-lg cursor-pointer hover:scale-110"
+                              />
+                            ) : null;
+                          })}
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className="w-full bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-shadow duration-300">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div
+              key={idx}
+              className="relative rounded-xl p-6 shadow-md bg-white border border-gray-200"
+            >
+              <h1 className="text-4xl font-bold mb-2 text-left bg-gradient-to-r from-[#413FC2] to-[#C668FD] bg-clip-text text-transparent">
+                {plan.title}
+              </h1>
+              <div className="text-left mb-4">
+                <p className="text-2xl font-bold flex items-center gap-1">
+                  {plan.price === "Custom"
+                    ? "Custom"
+                    : billingCycle === "Annually"
+                    ? Math.round(parseInt(plan.price.replace("$", "")) * 0.75) +
+                      "$"
+                    : plan.price}
+                  {plan.price !== "Custom" && (
+                    <span className="text-base font-medium text-gray-500">
+                      /{billingCycle === "Annually" ? "Year" : "Month"}
+                    </span>
                   )}
-                </li>
-              ))}
-            </ul>
+                </p>
+                <hr className="mt-3 border-t border-gray-200" />
+              </div>
 
-            <button className="w-full bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-shadow duration-300">
-              Get Started
-            </button>
-          </div>
-        ))}
+              <div className="inline-flex rounded-md overflow-hidden border border-[#D3C5FF] p-1 mt-4 bg-[#F4F0FF]">
+                {plan.credits.map((credit, i) => (
+                  <button
+                    key={i}
+                    className={`px-4 py-1 text-sm font-medium rounded-md transition-all duration-300 ${
+                      i === 0
+                        ? "bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white shadow"
+                        : "text-[#6B4EFF] hover:bg-white"
+                    }`}
+                  >
+                    {credit}
+                  </button>
+                ))}
+              </div>
+
+              <p className="text-sm font-semibold text-gray-700 mt-4 mb-1 text-left">
+                Credits per month
+              </p>
+              <p className="text-sm font-medium mb-4 text-left">
+                ✔️{plan.monthlyCredits}
+              </p>
+
+              {/* Features */}
+              <p className="text-sm font-semibold text-gray-700 mt-6 mb-1 text-left">
+                Core Features
+              </p>
+              <ul className="text-sm text-left space-y-2 mb-6">
+                {plan.features.map((feature, index) => (
+                  <li key={index} className="flex flex-col items-start gap-1">
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#6B4EFF] text-lg">✔️</span>
+                      {feature === "Social Media" ? (
+                        <span className="text-left">Social Media</span>
+                      ) : (
+                        feature
+                      )}
+                    </div>
+                    {feature === "Social Media" && (
+                      <div className="flex items-center gap-2 pl-6">
+                        {plan.socialIcons.map((icon) => {
+                          const IconComponent = socialIconsMap[icon];
+                          const iconColor = socialIconColors[icon] || "#6B4EFF";
+                          return IconComponent ? (
+                            <IconComponent
+                              key={icon}
+                              style={{
+                                color: iconColor,
+                                transition: "transform 0.2s",
+                              }}
+                              className="text-lg cursor-pointer hover:scale-110"
+                            />
+                          ) : null;
+                        })}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full bg-gradient-to-r from-[#6B4EFF] to-[#AE66FD] text-white py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-shadow duration-300">
+                Get Started
+              </button>
+            </div>
+          )
+        )}
       </div>
-
       <div className="mt-6">
         <button className="text-[#6B4EFF] font-medium rounded-full border border-[#6B4EFF] px-6 py-2 mt-4 hover:bg-[#f2f0ff] transition">
           Compare all Plans

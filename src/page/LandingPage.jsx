@@ -15,8 +15,6 @@ const LandingPage = () => {
     <div className="flex flex-col overflow-x-hidden">
       <Navbar />
       <main className="flex flex-col space-y-16">
-        {" "}
-        {/* Adjust 16 to desired spacing */}
         <Hero />
         <Action />
         <FeaturesSection />
@@ -30,5 +28,6 @@ const LandingPage = () => {
     </div>
   );
 };
+
 
 export default LandingPage;
