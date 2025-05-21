@@ -10,7 +10,7 @@ const SmartDiscovery = () => {
 
   return (
     <section className="bg-white px-4 pt-2 pb-0">
-      <div className="max-w-[90rem] mx-auto">
+      <div className="max-w-[87rem] mx-auto">
         {/* Headline */}
         <div className="text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-bold">
