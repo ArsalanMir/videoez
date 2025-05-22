@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import ananyaImg from "../assets/profile.png";
 import jamesImg from "../assets/pro2nd.png";
 import angelicaImg from "../assets/pro3rd.png";
+import men from "../assets/manpro.jpg";
+import women from "../assets/women.jpg";
+import female from "../assets/female.jpg";
 
 const testimonials = [
   {
@@ -26,19 +29,19 @@ const testimonials = [
     text: "Absolutely love the ease of use. It’s transformed how I create videos daily.",
     name: "Sophia Lee",
     location: "Canada",
-    image: angelicaImg,
+    image: women,
   },
   {
     text: "Excellent platform with amazing support. Helped me stay consistent and grow steadily.",
     name: "Carlos Ramirez",
     location: "Mexico",
-    image: jamesImg,
+    image: men,
   },
   {
     text: "Highly recommend it for anyone looking to streamline video creation and boost engagement!",
     name: "Fatima Noor",
     location: "UAE",
-    image: ananyaImg,
+    image: female,
   },
 ];
 

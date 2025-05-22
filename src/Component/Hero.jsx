@@ -30,10 +30,10 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-700 max-w-1xl mx-auto leading-relaxed">
           Turn your ideas into faceless videos in minutes with our AI-powered platform. Create engaging videos
-          with high-quality visuals, dynamic captions, and natural-sounding voiceovers effortlessly. Perfect for
-          marketers, influencers, or creators—video production has never been easier!
+          with high-quality <br />visuals, dynamic captions, and natural-sounding voiceovers effortlessly. Perfect for
+          marketers, influencers,<br /> or creators—video production has never been easier!
         </p>
 
         <div className="mt-8">

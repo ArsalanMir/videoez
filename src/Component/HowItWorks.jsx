@@ -48,7 +48,8 @@ const HowItWorks = () => {
       {/* Video Categories */}
       <div className="flex flex-wrap justify-center gap-3 mb-16">
         {categories.map((item) => (
-          <span
+          // <span
+          <a
             key={item}
             className="px-5 py-2 rounded-full text-sm font-medium border"
             style={{
@@ -59,7 +60,8 @@ const HowItWorks = () => {
             }}
           >
             {item}
-          </span>
+          {/* </span> */}
+          </a>
         ))}
       </div>
 
