@@ -18,8 +18,8 @@ const SmartDiscovery = () => {
             <span className="text-purple-500">Story to tell</span>
           </h2>
           <p className="mt-3 text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
-            Uncover the right audience, tools, and trends to turn your story into
-            viral videos.
+            Uncover the right audience, tools, and trends to turn your story
+            into viral videos.
           </p>
         </div>
 
@@ -68,22 +68,19 @@ const SmartDiscovery = () => {
           {/* Article to Video */}
           <div className="w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
             <div>
-              <h3 className="text-3xl font-bold text-purple-600 mb-6">
+              <h1 className="text-4xl font-bold text-purple-600 mb-6">
                 Article to Video
-              </h3>
+              </h1>
               <p className="text-lg text-gray-700 mb-6">
                 Transform any article, blog post or webpage into a professional
                 video with just one click. Our AI extracts the key points and
                 creates a compelling narrative.
               </p>
-              <div
-                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center mx-auto"
-                style={{ width: "100%", maxWidth: "500px", height: "320px" }}
-              >
+              <div className="media-box">
                 <img
                   src={articleImg}
                   alt="Article to Video"
-                  className="w-full h-full object-cover"
+                  className="media-img rounded-xl"
                 />
               </div>
             </div>
@@ -98,22 +95,19 @@ const SmartDiscovery = () => {
           {/* Stock Media */}
           <div className="w-full bg-gradient-to-br from-[#f3e8ff] to-[#e0f2fe] rounded-2xl p-8 shadow-sm flex flex-col justify-between">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl font-bold text-gray-900 mb-6">
                 2M+ Stock Media Available
-              </h3>
+              </h1>
               <p className="text-lg text-gray-700 mb-6">
-                Access millions of high quality stock images, videos, music tracks
-                and sound effects to enhance your videos without additional
-                licensing fees.
+                Access millions of high quality stock images, videos, music
+                tracks and sound effects to enhance your videos professionally without
+                additional licensing fees.
               </p>
-              <div
-                className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center mx-auto"
-                style={{ width: "100%", maxWidth: "500px", height: "320px" }}
-              >
+              <div className="media-box">
                 <img
                   src={stockMediaImg}
                   alt="Stock Media"
-                  className="w-full h-full object-cover"
+                  className="media-img rounded-xl"
                 />
               </div>
             </div>
@@ -124,6 +118,30 @@ const SmartDiscovery = () => {
               </span>
             </a>
           </div>
+
+          {/* Embedded custom styles */}
+          {/* <style>
+            {`
+      .media-box {
+        width: 100%;
+        max-width: 500px;
+        height: 400px;
+        background-color: #f3f4f6; 
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .media-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    `}
+          </style> */}
         </div>
 
         {/* Go Faceless Section */}
@@ -135,8 +153,8 @@ const SmartDiscovery = () => {
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-3/5 px-2">
               <p className="text-gray-600 text-lg mb-6">
-                Generate entire videos using AI-written or your own scripts, with
-                relevant scenes and stock visuals.
+                Generate entire videos using AI-written or your own scripts,
+                with relevant scenes and stock visuals.
               </p>
               <ul className="space-y-4 text-lg text-gray-800">
                 {[
