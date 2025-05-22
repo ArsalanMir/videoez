@@ -84,25 +84,25 @@ const FAQ = () => {
 
   return (
     <section className="pt-8 pb-16 bg-white w-full">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-24">
+      <div className="max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8"> 
+        {/* Reduced padding here for wider content area */}
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-gray-900">
             Frequently asked question
           </h2>
           <p className="text-gray-500 mt-2">
-            Everything you need to know to start discovering and creating like a
-            pro.
+            Everything you need to know to start discovering and creating like a pro.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {faqs.map((item, index) => {
             const faqId = `faq-${index}`;
 
             return (
               <div
                 key={faqId}
-                className="bg-white shadow-sm rounded-xl p-5 border border-gray-100 transition-all duration-200"
+                className="bg-white shadow-sm rounded-xl p-5 border border-gray-100 transition-all duration-200 h-full flex flex-col justify-between w-full"
               >
                 <button
                   className="flex justify-between items-center w-full"
@@ -117,6 +117,7 @@ const FAQ = () => {
                     <PlusIcon className="w-5 h-5 text-gray-500" />
                   )}
                 </button>
+
                 {activeId === faqId && (
                   <div className="mt-4 text-sm text-gray-600">
                     {typeof item.answer === "string" ? (
@@ -148,3 +149,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+

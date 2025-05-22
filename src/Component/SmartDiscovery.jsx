@@ -36,6 +36,7 @@ const SmartDiscovery = () => {
               }}
             >
               <img
+              className="rounded-xl"
                 src={facelessImg}
                 alt="Story Discovery Preview"
                 style={{

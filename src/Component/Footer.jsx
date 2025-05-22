@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#f9f9f9] text-gray-700 pt-32 mt-12 pb-6">
       {/* Call to Action Box Overlapping Footer */}
-      <div className="absolute -top-20 left-0 right-0 mx-auto max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-4.5rem)] md:max-w-[calc(100%-12rem)] bg-gradient-to-br from-[#4e00c2] to-[#f255e6] text-white rounded-2xl shadow-lg py-14 px-6 sm:px-10 md:px-12 z-10">
+      <div className="absolute -top-20 inset-x-6 sm:inset-x-10 md:inset-x-16 bg-gradient-to-br from-[#4e00c2] to-[#f255e6] text-white rounded-2xl shadow-lg py-14 px-6 sm:px-10 md:px-12 z-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-full md:max-w-3xl leading-snug">
             Experience Amazing Features of our AI video Creation Platform
@@ -46,38 +46,38 @@ const Footer = () => {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
+                  className="bg-black text-white p-1.5 hover:bg-gray-800 transition"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF />
+                  <FaFacebookF className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
+                  className="bg-black text-white p-1.5 hover:bg-gray-800 transition"
                   aria-label="Instagram"
                 >
-                  <FaInstagram />
+                  <FaInstagram className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
+                  className="bg-black text-white p-1.5 hover:bg-gray-800 transition"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn />
+                  <FaLinkedinIn className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
+                  className="bg-black text-white p-1.5 hover:bg-gray-800 transition"
                   aria-label="YouTube"
                 >
-                  <FaYoutube />
+                  <FaYoutube className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="bg-black text-white p-3 hover:bg-gray-800 transition"
+                  className="bg-black text-white p-1.5 hover:bg-gray-800 transition"
                   aria-label="Twitter"
                 >
-                  <FaTwitter />
+                  <FaTwitter className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -85,7 +85,7 @@ const Footer = () => {
 
           {/* Bottom Links aligned to the right */}
           <div className="flex-1 md:flex md:justify-end">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm text-gray-800">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-25 text-sm text-gray-800">
               <div>
                 <h4 className="font-semibold mb-3 text-gray-900">Company</h4>
                 <ul className="space-y-2">
