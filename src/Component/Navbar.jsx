@@ -31,24 +31,26 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Links */}
+
           <div className="hidden md:flex space-x-6 text-gray-800 font-medium">
-            <Link to="/features">Features</Link>
-            <Link to="/use-cases">Use Cases</Link>
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/">Features</Link>
+            <Link to="#">Use Cases</Link>
+            <Link to="#">Pricing</Link>
             <Link to="/affiliates">Affiliates</Link>
             <Link to="/contact">Contact Us</Link>
           </div>
 
           {/* Desktop Buttons */}
+
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              to="/signup"
+              to="#"
               className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition"
             >
               SignUp
             </Link>
             <Link
-              to="/login"
+              to="#"
               className="border border-indigo-400 text-indigo-600 px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-50 transition"
             >
               Login
@@ -67,13 +69,13 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-white px-4 pb-4 space-y-4">
-            <Link to="/features" className="block text-gray-800">
+            <Link to="/" className="block text-gray-800">
               Features
             </Link>
-            <Link to="/use-cases" className="block text-gray-800">
+            <Link to="#" className="block text-gray-800">
               Use Cases
             </Link>
-            <Link to="/pricing" className="block text-gray-800">
+            <Link to="#" className="block text-gray-800">
               Pricing
             </Link>
             <Link to="/affiliates" className="block text-gray-800">
@@ -83,13 +85,13 @@ const Navbar = () => {
               Contact Us
             </Link>
             <Link
-              to="/signup"
+              to="#"
               className="block bg-gradient-to-r from-indigo-600 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold text-center"
             >
               SignUp
             </Link>
             <Link
-              to="/login"
+              to="#"
               className="block border border-indigo-400 text-indigo-600 px-4 py-2 rounded-full text-sm font-semibold text-center"
             >
               Login

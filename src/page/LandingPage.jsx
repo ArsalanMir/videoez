@@ -13,7 +13,7 @@ import Footer from "../Component/Footer";
 const LandingPage = () => {
   return (
     <div className="flex flex-col overflow-x-hidden">
-      <Navbar />
+      
       <main className="flex flex-col space-y-16">
         <Hero />
         <Action />
@@ -24,7 +24,7 @@ const LandingPage = () => {
         <Testimonials />
         <FAQ />
       </main>
-      <Footer />
+
     </div>
   );
 };
