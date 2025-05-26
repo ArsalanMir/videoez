@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6 text-gray-800 font-medium">
             <Link to="/">Features</Link>
             <Link to="#">Use Cases</Link>
-            <Link to="#">Pricing</Link>
+            <Link to="pricing">Pricing</Link>
             <Link to="/affiliates">Affiliates</Link>
             <Link to="/contact">Contact Us</Link>
           </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
             <Link to="#" className="block text-gray-800">
               Use Cases
             </Link>
-            <Link to="#" className="block text-gray-800">
+            <Link to="pricing" className="block text-gray-800">
               Pricing
             </Link>
             <Link to="/affiliates" className="block text-gray-800">
