@@ -1,11 +1,11 @@
 import React from 'react';
 import { ActionCard } from './ActionCard';
-import faceless from "../assets/action/faceless.jpg"
-import faceless2 from "../assets/action/faceless2.jpg"
-import avatar from "../assets/action/avatar.jpg"
-import avatar2 from "../assets/action/avatar2.jpg"
-import aieditor from "../assets/action/aieditor.jpg"
-import video from "../assets/action/video.jpg"
+import faceless from "../assets/faceless.jpg"
+import faceless2 from "../assets/faceless2.jpg"
+import avatar from "../assets/avatar.jpg"
+import avatar2 from "../assets/avatar2.jpg"
+import aieditor from "../assets/aieditor.jpg"
+import video from "../assets/video.jpg"
 const actions = [
   {
     src: faceless,
