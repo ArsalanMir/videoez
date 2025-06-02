@@ -1,33 +1,32 @@
 import React from 'react';
 import { ActionCard } from './ActionCard';
-import aiEditor from '../assets/action/aiEditor.jpg';
-import avatar2 from '../assets/action/avatar2.jpg';
-import Avatar from '../assets/action/Avatar.jpg';
-import facelessV1 from '../assets/action/faceless2.jpg';
-import faceLess from '../assets/action/faceLess.jpg';
-import videoEditor from '../assets/action/videoEditor.jpg';
-
+import faceless from "../assets/action/faceless.jpg"
+import faceless2 from "../assets/action/faceless2.jpg"
+import avatar from "../assets/action/avatar.jpg"
+import avatar2 from "../assets/action/avatar2.jpg"
+import aieditor from "../assets/action/aieditor.jpg"
+import video from "../assets/action/video.jpg"
 const actions = [
   {
-    src: faceLess,
+    src: faceless,
     tag: 'Faceless V2',
     title: 'Faceless V2 – Template-Based',
     desc: 'Quick videos using layouts',
   },
   {
-    src: Avatar,
+    src: avatar,
     tag: 'Avatar',
     title: 'AI Avatar Videos',
     desc: 'Realistic talking AI avatars',
   },
   {
-    src: aiEditor,
+    src: aieditor,
     tag: 'AI Editor',
     title: 'Faceless V1 – Script-to-Video AI',
     desc: 'From text to faceless video',
   },
   {
-    src: videoEditor,
+    src: video,
     tag: 'Video Editor',
     title: 'Advanced Video Editor',
     desc: 'Edit fast with AI tools',
@@ -39,7 +38,7 @@ const actions = [
     desc: 'Custom avatar presentations',
   },
   {
-    src: facelessV1,
+    src: faceless2,
     tag: 'Faceless V1',
     title: 'Enhanced AI Editor',
     desc: 'Sync, animate, and edit',
