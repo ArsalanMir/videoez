@@ -1,11 +1,11 @@
 import React from 'react';
 import { ActionCard } from './ActionCard';
-import aiEditor from '../assets/Action/aiEditor.jpg';
-import avatar2 from '../assets/Action/avatar2.jpg';
-import Avatar from '../assets/Action/Avatar.jpg';
-import facelessV1 from '../assets/Action/faceLessv1.jpg';
-import faceLess from '../assets/Action/faceLess.jpg';
-import videoEditor from '../assets/Action/videoEditor.jpg';
+import aiEditor from '../assets/action/aiEditor.jpg';
+import avatar2 from '../assets/action/avatar2.jpg';
+import Avatar from '../assets/action/Avatar.jpg';
+import facelessV1 from '../assets/action/faceless2.jpg';
+import faceLess from '../assets/action/faceLess.jpg';
+import videoEditor from '../assets/action/videoEditor.jpg';
 
 const actions = [
   {
